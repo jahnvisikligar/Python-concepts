@@ -1,1 +1,6 @@
-Let us explore various OOPS concepts with python
+The base pillars of OOP(Object-Oriented programming) are as follows:
+-  Class
+-  Encapsulation
+-  Inheritance
+-  Polymorphism
+-  Abstrction

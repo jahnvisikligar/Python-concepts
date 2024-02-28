@@ -7,6 +7,6 @@ Welcome to my collection of Python concepts! This repository showcases my work w
 - **Data structures and algorithms(DSA):**
   - [Data structures](link)
   - [Algorithms](link)
-- **Object-oriented programming with Python**: Brief description of the project and its objectives.
-
+- **Object-oriented programming with Python**
+  
 Feel free to explore each project and don't hesitate to reach out if you have any questions or feedback!

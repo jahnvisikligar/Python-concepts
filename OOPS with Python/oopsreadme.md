@@ -64,3 +64,6 @@ The example provided below the `__repr__` method of the 'Novel' class supersedes
         self.genre=genre
       def __repr__(self):
         return f"""Novel:{self.title},Author:{self.author},Price:{self.get_Price()},Genre:{self.genre}"""
+### Abstraction
+
+

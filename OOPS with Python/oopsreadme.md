@@ -15,7 +15,7 @@ In the provided code example:
 * class = Book
 * attributes = title, author, price
 
-The built-in classes are named in lower case as shown for the `__init__` method. The user-defined classes are Camel case or Snake case. The special method is defined which begins and ends with two underscores and is invoked automatically when certain conditions are met.
+The built-in classes are named in lowercase for the `__init__` method. The user-defined classes are Camel case or Snake case. The special method is defined which begins and ends with two underscores and is invoked automatically when certain conditions are met.
 >Attributes are names given to variables contained in a class.
 
 ### Encapsulation
@@ -39,9 +39,9 @@ It prevents clients from accessing certain properties, which can only be accesse
 
 ### Inheritance
 
-A class's ability to inherit methods/characteristics from another class is known as inheritance.                    
+An inheritance is a class's ability to inherit methods/characteristics from another class.                    
 
-Continuing the above example, the addition of the 'Novel' class has the same attributes such as title, author, and price as the parent class Book. The implemented code example for the same is shown below:
+Continuing the above example, adding the 'Novel' class has the same attributes such as title, author, and price as the parent class Book. The implemented code example for the same is shown below:
 
     class Novel(Book):
       def __init__(self, title, author, price,genre) -> None:
@@ -56,7 +56,7 @@ It refers to a sub-class's ability to adapt a method that already exists in its 
 * The first method involves taking the attributes of the parent class as they are.
 * In the second approach, there is invoking of its own method by suppressing the same method present in its super class
 
-The example provided below the `__repr__` method of the 'Novel' class supersedes the `__repr__` method of parent class 'Book'. The code is as shown below  :
+The example provided below the `__repr__` method of the 'Novel' class supersedes the `__repr__` method of the parent class 'Book'. The code is as shown below  :
 
     class Novel(Book):
       def __init__(self, title, author, price,genre) -> None:
@@ -65,5 +65,52 @@ The example provided below the `__repr__` method of the 'Novel' class supersedes
       def __repr__(self):
         return f"""Novel:{self.title},Author:{self.author},Price:{self.get_Price()},Genre:{self.genre}"""
 ### Abstraction
+Abstraction is a process of handling complexity by hiding unnecessary information from the user. It enables the user to implement even more complex logic on top of the provided abstraction without understanding or even thinking about the hidden background/back-end complexity. An abstract method is a method that is declared but does not contain implementation. It identifies the functionality that should be implemented by all its sub-classes.
+
+>Abstraction allows a programmer to hide all irrelevant data/processes of an application to reduce complexity and increase the efficiency of the programme.
+>Implementation would differ from one subclass to another. It sometimes comprises of `pass` statement
+>Not directly supported in python
+>Need to class `ABC`(Abstract Base Class) for implementation as follows:
+
+`from abc import ABC abstractmethod`
+
+Given in the provided example abstraction has been achieved as follows:
+
+Syntax:
+
+      from abc import ABC
+      class ClassName(ABC):
+
+Implementation:
+
+      from abc import ABC, abstractmethod
+      class Book(ABC):
+        def __init__(self,title,author,price) -> None:
+          self.title=title
+          self.author=author
+          self.__price=price
+          self.__discount=None
+        def set_discount(self,discount):
+          self.__discount=discount
+        def get_Price(self):
+          if self.__discount:
+            return (self.__price*(1-self.__discount))
+          return self.__price
+        @abstractmethod
+        def __repr__(self):
+          return f"""Book:{self.title},Author:{self.author},Price:{self.get_Price()}"""
+It is to be noted that with abstraction, the Novel class is forced to have its own `__repr__` method as opposed to the process of Polymorphism and Encapsulation. 
+
+### Method Overriding
+
+*Method with the same name and arguments is used both in a derived class and a base class/super class. It is said that the derived class 'overrides' the method provided in a base class.
+*When the overridden method gets called, the derived class's method is always invoked.
+*To invoke the method from the Parent class, use the keyword `super`
+
+### Method Overloading
+
+It refers to the use of many methods with the same name that take different numbers of arguments within a single class.
+
+
 
 

@@ -103,9 +103,9 @@ It is to be noted that with abstraction, the Novel class is forced to have its o
 
 ### Method Overriding
 
-*Method with the same name and arguments is used both in a derived class and a base class/super class. It is said that the derived class 'overrides' the method provided in a base class.
-*When the overridden method gets called, the derived class's method is always invoked.
-*To invoke the method from the Parent class, use the keyword `super`
+* Method with the same name and arguments is used both in a derived class and a base class/super class. It is said that the derived class 'overrides' the method provided in a base class.
+* When the overridden method gets called, the derived class's method is always invoked.
+* To invoke the method from the Parent class, use the keyword `super`
 
 ### Method Overloading
 

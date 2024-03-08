@@ -1,4 +1,4 @@
-## OOP(Object-Oriented programming):
+## Object-Oriented programming(OOP)
 
 ### Class
 
